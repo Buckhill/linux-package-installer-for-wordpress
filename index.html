@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Linux Package Installer for Wordpress : A module for LPI which automatically installs Wordpress, easily and securely. Optionally, add-ons can also be installed automatically" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Linux Package Installer for Wordpress</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Buckhill/linux-package-installer-for-wordpress">View on GitHub</a>
+
+          <h1 id="project_title">Linux Package Installer for Wordpress</h1>
+          <h2 id="project_tagline">A module for LPI which automatically installs Wordpress, easily and securely. Optionally, add-ons can also be installed automatically</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Buckhill/linux-package-installer-for-wordpress/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Buckhill/linux-package-installer-for-wordpress/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="linux-package-installer-for-wordpress-lpi-wp" class="anchor" href="#linux-package-installer-for-wordpress-lpi-wp"><span class="octicon octicon-link"></span></a>Linux Package Installer for Wordpress (LPI-WP)</h3>
+
+<p>LPI-WP installs and auto configures Wordpress, with by default, <strong>ssh-sftp-updater</strong> and <strong>w3-total-cache</strong> modules.  Additional default modules can be specified.</p>
+
+<p>LPI-WP is primarily designed to work with Web Chroot Manager (WCM) (<a href="https://github.com/Buckhill/web-chroot-manager">https://github.com/Buckhill/web-chroot-manager</a>), but with extra parameters provided it can function independently on any generic LAMP installation.</p>
+
+<h4>
+<a name="limitations" class="anchor" href="#limitations"><span class="octicon octicon-link"></span></a>Limitations</h4>
+
+<p>LPI-WP has been designed for Ubuntu 12.04+ LTS.  Debian is not yet officially support but should work. CentOS/Redhat support are due with the next release.</p>
+
+<p>It is assumed MySQL is listening on 127.0.0.1:3306</p>
+
+<h4>
+<a name="installation-requirements" class="anchor" href="#installation-requirements"><span class="octicon octicon-link"></span></a>Installation requirements</h4>
+
+<p>The domain which will be configured using LPI-WP must be resolvable by the server</p>
+
+<h4>
+<a name="how-to-use-lpi-wp" class="anchor" href="#how-to-use-lpi-wp"><span class="octicon octicon-link"></span></a>How to use LPI-WP</h4>
+
+<p>There are two modes, WCM mode (default) and generic mode</p>
+
+<p>WCM can be found here: <a href="https://github.com/Buckhill/web-chroot-manager">https://github.com/Buckhill/web-chroot-manager</a></p>
+
+<p>Usage: ./linux-package-installer-for-wordpress.sh [options...]</p>
+
+<h4>
+<a name="wcm-mode" class="anchor" href="#wcm-mode"><span class="octicon octicon-link"></span></a>WCM mode</h4>
+
+<p>LPI-WP relies on WCM configuration files. This mode is default, only two options are required:</p>
+
+<ul>
+<li>-u (Secondary Username)</li>
+<li>-s (Domain Name)</li>
+</ul><p>After Wordpress has successfully installed the script outputs the credentials for the WP admin user</p>
+
+<p><strong>Optional arguments:</strong></p>
+
+<ul>
+<li>-c path to WCM config dir. /etc/buckhill-wcm is default</li>
+</ul><h4>
+<a name="generic-mode" class="anchor" href="#generic-mode"><span class="octicon octicon-link"></span></a>Generic mode</h4>
+
+<p>Can be ran on any LAMP installation, WCM is not required.  It is assumed the MySQL server is running locally</p>
+
+<p><strong>Certain parameters are mandatory:</strong></p>
+
+<ul>
+<li>-g enables generic mode</li>
+<li>-w web user. The user under PHP scripts are ran. On Ubuntu this is 'www-data'</li>
+<li>-d full path of a directory where Wordpress will be installed</li>
+<li>-u User which will be the owner of the Wordpress files. Can be the same as web user, but not recommended. Can be root.</li>
+<li>-e email address. Needed for Wordpress installation, otherwise final configuration will fail</li>
+</ul><p><strong>Optional arguments:</strong></p>
+
+<ul>
+<li>-m Database name. LPI-WP will by default automatically generate the DB name and DB user from the username and site name given.  This can be overwritten by using this option</li>
+<li>-y Answer "y" to all questions</li>
+<li>-t path to temporary folder where Wordpress and modules are downloaded. Default is /tmp/wp_install</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Linux Package Installer for Wordpress maintained by <a href="https://github.com/Buckhill">Buckhill</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-46210494-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
