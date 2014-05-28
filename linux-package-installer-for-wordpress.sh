@@ -320,9 +320,9 @@ if [ -z "$DBNAME" ]
 then
 	if [ "$GENERIC" == "1" ]
 	then	 
-		dbn=$(echo "wp_$SITE" |sed 's/\./_/g'|head -c 16)
+		dbn=$(echo "wp_$SITE" |sed 's/[^a-bA-B0-9_]\+/_/g'|sed 's/\./_/g'|head -c 16)
 	else
-		dbn=$(echo "${WEBUSER}_$SITE" |sed 's/\./_/g'|head -c 16)
+		dbn=$(echo "${WEBUSER}_$SITE" |sed 's/[^a-bA-B0-9_]\+/_/g'|sed 's/\./_/g'|head -c 16)
 	fi
 else
 	dbn_sanity_check $DBNAME || error_stop "Illegal character found in database name."
