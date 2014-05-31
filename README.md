@@ -8,11 +8,11 @@ LPI-WP is primarily designed to work with Web Chroot Manager (WCM) (https://gith
 
 LPI-WP has been designed for Ubuntu 12.04+ LTS.  Debian is not yet officially support but should work. CentOS/Redhat support are due with the next release.
 
-It is assumed MySQL is listening on 127.0.0.1:3306
+It is assumed MySQL is listening on 127.0.0.1:3306, although this can be changed by editing the DB_SERVER variable within the shell file.
 
 #### Installation requirements
 
-The domain which will be configured using LPI-WP must be resolvable by the server
+The domain which will be configured using LPI-WP must be resolvable by the server, either via DNS or hosts file
 
 #### How to use LPI-WP
 
@@ -46,6 +46,7 @@ Can be ran on any LAMP installation, WCM is not required.  It is assumed the MyS
 - -d full path of a directory where Wordpress will be installed
 - -u User which will be the owner of the Wordpress files. Can be the same as web user, but not recommended. Can be root.
 - -e email address. Needed for Wordpress installation, otherwise final configuration will fail
+- -s the domain name, must be resolvable locally or via DNS
 
 **Optional arguments:**
 
