@@ -312,7 +312,7 @@ fi
 MY_PASS=''
 until mysql_check $MY_PASS
 do
-	read -p "Insert mysql root password: " MY_PASS
+	read -p "Please insert mysql root password: " MY_PASS
 done 
 [ -n "$MY_PASS" ]  && MYOPTIONS="-p$MY_PASS"
 
@@ -326,7 +326,7 @@ then
 	fi
 else
 	dbn_sanity_check $DBNAME || error_stop "Illegal character found in database name."
-	[ ${#DBNAME} -gt 16 ] && error_stop "Database name is to long."
+	[ ${#DBNAME} -gt 16 ] && error_stop "Database name is too long."
 	dbn=$DBNAME
 fi
 
@@ -346,7 +346,7 @@ do
 	[ -f $TMPDIR/${download##*/} ] || error_stop "The ${download##*/} is missing" 
 done
 
-echo "Installing Wordress" 
+echo "Installing Wordpress" 
 tar -xzf latest.tar.gz
 cd wordpress 
 mv * $SITEDIR
