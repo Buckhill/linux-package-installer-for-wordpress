@@ -53,3 +53,8 @@ Can be ran on any LAMP installation, WCM is not required.  It is assumed the MyS
 - -m Database name. LPI-WP will by default automatically generate the DB name and DB user from the username and site name given.  This can be overwritten by using this option
 - -y Answer "y" to all questions
 - -t path to temporary folder where Wordpress and modules are downloaded. Default is /tmp/wp_install
+
+
+#### Generic mode example command
+
+$ ./linux-package-installer-for-wordpress.sh -g -w www-data -d /var/www/yourdomain.com/public -u www-data -e youremail@yourdomain.com -s yourdomain.com -m databasename
