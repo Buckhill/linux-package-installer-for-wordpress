@@ -304,7 +304,7 @@ if echo "$WGET_OUT" |grep -q "200 OK"
 then
 	rm -f $SITEDIR/$TMPFILE
 else
-	echo "Site is not responding as expected"
+	echo "Site is not responding as expected, are you sure it is resolvable?"
 	echo "$WGET_OUT"
 	exit 1
 fi
