@@ -1,5 +1,7 @@
 ###Linux Package Installer for Wordpress (LPI-WP) 
 
+Blog Post: https://www.buckhill.co.uk/blog/how-to-automatically-install-wordpress-plus-plugins/6
+
 LPI-WP installs and auto configures Wordpress, with by default, **ssh-sftp-updater**, **w3-total-cache** and **Wordfence security** modules.  Additional default modules can be specified.
 
 LPI-WP is primarily designed to work with Web Chroot Manager (WCM) (https://github.com/Buckhill/web-chroot-manager), but with extra parameters provided it can function independently on any generic LAMP installation.
